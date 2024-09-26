@@ -35,7 +35,7 @@ func main() {
 		pathPlaceholder = "\\w"
 	}
 
-	// Print PS1           purple       time  green        user@host orange        pwd    erase colour
-	result += fmt.Sprintf("\\[\\e[0;35m\\]\\t \\[\\e[0;32m\\]\\u@\\h \\[\\e[0;33m\\]%s\\[\\e[m\\]\\n$", pathPlaceholder)
+	// Print PS1           purple       time  green        user@host orange        pwd  cyan          git branch            erase colour
+	result += fmt.Sprintf("\\[\\e[0;35m\\]\\t \\[\\e[0;32m\\]\\u@\\h \\[\\e[0;33m\\]%s\\[\\e[0;36m\\] $(__git_ps1 \"(%%s)\")\\[\\e[m\\]\\012$", pathPlaceholder)
 	fmt.Println(result)
 }
